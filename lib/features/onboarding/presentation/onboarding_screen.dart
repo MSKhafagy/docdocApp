@@ -1,8 +1,9 @@
 import 'package:doctorapp/core/utils/txt_style.dart';
+import 'package:doctorapp/features/auth/register/presentation/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../auth/register/presentation/screens/login_screen.dart';
+import '../../home/home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -49,7 +50,7 @@ class OnboardingScreen extends StatelessWidget {
 
                 final SharedPreferences prefs = await SharedPreferences.getInstance();
                 await prefs.setBool('isLogin', true);
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> RegisterScreen()));
 
               },
               child: Container(

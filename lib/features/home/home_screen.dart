@@ -1,8 +1,9 @@
 
+import 'package:doctorapp/core/utils/txt_style.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class LoginScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Login Successfully",style: TextStyle(fontWeight: FontWeight.w600),textAlign: TextAlign.center,)
+          Center(child: Text("Login Successfully",style: TxtStyle.font700Size32blue))
         ],
       ),
     );

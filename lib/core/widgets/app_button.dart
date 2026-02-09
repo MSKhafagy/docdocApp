@@ -11,7 +11,7 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: function(),
+      onTap:() => function(),
 
       child: Container(
         width: 327,
