@@ -19,4 +19,27 @@ class TxtStyle {
     fontSize: 10,
     color: ColorsManager.grey,
   );
+
+  static const TextStyle font600size16White = TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 16,
+      color: ColorsManager.white
+  );
+  static const TextStyle font700size24Blue = TextStyle(
+      fontWeight: FontWeight.w700,
+      fontSize: 24,
+      color: ColorsManager.primaryColor
+  );
+
+  static const TextStyle font400size14Grey = TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+      color: ColorsManager.grey
+  );
+  static const TextStyle font500size14Grey = TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 14,
+      color: ColorsManager.grey
+  );
+
 }
