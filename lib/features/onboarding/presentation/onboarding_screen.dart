@@ -1,4 +1,5 @@
 import 'package:doctorapp/core/utils/txt_style.dart';
+import 'package:doctorapp/core/widgets/app_button.dart';
 import 'package:doctorapp/features/auth/register/presentation/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -45,42 +46,17 @@ class OnboardingScreen extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            InkWell(
-              onTap: () async{
 
-                final SharedPreferences prefs = await SharedPreferences.getInstance();
-                await prefs.setBool('isLogin', true);
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> RegisterScreen()));
 
-              },
-              child: Container(
-                width: 312,
-                height: 54,
-                decoration: BoxDecoration(
-                    color: Color.fromRGBO(36, 124, 255, 1),
-                    borderRadius: BorderRadius.circular(10)
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-
-                    Text('Get Started',
-                      style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20
-                      ),
-                    )
-
-                  ],
-                ),
-              ),
+            AppButton(
+              buttonTxt: "Get Started",
+              function:() {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> RegisterScreen())); },
             ),
 
 
           ],
         ),
-      ),
-    );
+     ),
+   );
   }
 }

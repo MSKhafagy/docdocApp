@@ -1,5 +1,3 @@
-
-
 import 'package:dio/dio.dart';
 import 'package:doctorapp/const/api_const.dart';
 import 'package:doctorapp/features/auth/register/data/user_model.dart';
