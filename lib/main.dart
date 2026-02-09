@@ -1,4 +1,5 @@
-import 'package:doctorapp/presentation/screens/splash_screen.dart';
+
+import 'package:doctorapp/features/splash/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

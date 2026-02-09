@@ -1,6 +1,6 @@
-import 'package:doctorapp/core/txt_style.dart';
-import 'package:doctorapp/presentation/screens/login_screen.dart';
-import 'package:doctorapp/presentation/screens/onboarding_screen.dart';
+import 'package:doctorapp/core/utils/txt_style.dart';
+import 'package:doctorapp/features/onboarding/presentation/onboarding_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

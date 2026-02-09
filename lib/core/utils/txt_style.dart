@@ -1,3 +1,4 @@
+import 'package:doctorapp/core/utils/colors_manager.dart';
 import 'package:flutter/material.dart';
 
 class TxtStyle {
@@ -10,12 +11,12 @@ class TxtStyle {
   static TextStyle font700Size32blue = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 32,
-    color: Color.fromRGBO(36, 124, 255, 1),
+    color: ColorsManager.primaryColor,
   );
 
   static TextStyle font400Size10grey = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 10,
-    color: Color.fromRGBO(117, 117, 117, 1),
+    color: ColorsManager.grey,
   );
 }
