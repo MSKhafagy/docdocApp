@@ -42,4 +42,25 @@ class TxtStyle {
       color: ColorsManager.grey
   );
 
+  static const TextStyle font700size18Black = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    color: ColorsManager.textBlack,
+  );
+  static const TextStyle font600size18Black = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: ColorsManager.textMoreBlack,
+  );
+  static const TextStyle font400size12Blue = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.primaryColor,
+  );
+
+  static const TextStyle font400size11Black = TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.textHome,
+  );
 }

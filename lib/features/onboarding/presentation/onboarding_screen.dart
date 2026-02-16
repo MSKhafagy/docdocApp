@@ -4,7 +4,7 @@ import 'package:doctorapp/features/auth/register/presentation/screens/register_s
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../home/home_screen.dart';
+import '../../home/presentation/screens/home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

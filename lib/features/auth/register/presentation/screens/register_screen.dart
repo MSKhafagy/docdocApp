@@ -1,11 +1,11 @@
 import 'package:doctorapp/core/utils/colors_manager.dart';
 import 'package:doctorapp/core/widgets/app_button.dart';
-import 'package:doctorapp/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' show BlocConsumer, BlocProvider, ReadContext;
 import 'package:doctorapp/features/auth/register/data/user_model.dart';
 import '../../../../../core/utils/txt_style.dart';
 import '../../../../../core/widgets/app_txt_field.dart';
+import '../../../../home/presentation/screens/home_screen.dart';
 import '../../data/user_model.dart';
 import '../../logic/cubit.dart';
 import '../../logic/states.dart';
@@ -27,7 +27,7 @@ class RegisterScreen extends StatelessWidget {
       child: BlocConsumer<RegisterCubit, RegisterStates>(
         listener: (context, state) {
           if (state is RegisterSuccessState){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen(userName: state.userName)));
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(
