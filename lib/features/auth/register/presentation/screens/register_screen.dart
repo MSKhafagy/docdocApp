@@ -1,5 +1,6 @@
 import 'package:doctorapp/core/utils/colors_manager.dart';
 import 'package:doctorapp/core/widgets/app_button.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' show BlocConsumer, BlocProvider, ReadContext;
 import 'package:doctorapp/features/auth/register/data/user_model.dart';
@@ -19,9 +20,18 @@ class RegisterScreen extends StatelessWidget {
   TextEditingController genderController = TextEditingController();
   TextEditingController passwordConfirmationController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
+  Future toggleLang(BuildContext context)async{
+    Locale currentLang =context.locale;
+    if(currentLang.languageCode == "en"){
+      await context.setLocale(Locale("ar"));
+    }else{
+      context.setLocale(Locale("en"));
+    }
 
+  }
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.sizeOf(context).height;
     return  BlocProvider(
       create: (context) => RegisterCubit(),
       child: BlocConsumer<RegisterCubit, RegisterStates>(
@@ -69,36 +79,43 @@ class RegisterScreen extends StatelessWidget {
                   spacing: 12,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Create Account", style: TxtStyle.font700size24Blue),
+                    CircleAvatar(
+                      radius: screenHeight * 0.032,
+                      backgroundColor: ColorsManager.white,
+                      child: IconButton(icon : Icon(Icons.language, color: ColorsManager.textBlack,size: screenHeight * 0.033),onPressed: (){
+                        toggleLang(context);
+                      },),
+                    ),
+                    Text("Create Account".tr(), style: TxtStyle.font700size24Blue),
                     Text(
-                      "Sign up now and start exploring all that our app has to offer. We're excited to welcome you to our community!",
+                      "Sign up now and start exploring all that our app has to offer. We're excited to welcome you to our community!".tr(),
                       style: TxtStyle.font400size14Grey,
                     ),
                     AppTxtField(
-                      hintTxt: "Email",
+                      hintTxt: "Email".tr(),
                       textEditingController: emailController,
                     ),
                     AppTxtField(
-                        hintTxt: "name", textEditingController: nameController),
+                        hintTxt: "name".tr(), textEditingController: nameController),
                     AppTxtField(
-                      hintTxt: "Phone Number",
+                      hintTxt: "Phone Number".tr(),
                       textEditingController: phoneNumberController,
                     ),
                     AppTxtField(
-                      hintTxt: "Gender",
+                      hintTxt: "Gender".tr(),
                       textEditingController: genderController,
                     ),
                     AppTxtField(
-                      hintTxt: "Password",
+                      hintTxt: "Password".tr(),
                       textEditingController: passwordController,
                     ),
                     AppTxtField(
-                      hintTxt: "Password Confirmation",
+                      hintTxt: "Password Confirmation".tr(),
                       textEditingController: passwordConfirmationController,
                     ),
 
                     (state is RegisterLoadingState) ?Center(child: CircularProgressIndicator())  : AppButton(
-                      buttonTxt: "Create Account",
+                      buttonTxt: "Create Account".tr(),
                       function: () {
                         context.read<RegisterCubit>().register(
                           UserModel(
